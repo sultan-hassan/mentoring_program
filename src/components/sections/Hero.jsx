@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Users, Sparkles } from 'lucide-react'
 import Button from '../ui/Button'
+import { MENTOR_FORM_URL, STUDENT_FORM_URL } from '../../config'
 
 const SUDAN = { x: 265, y: 235 }
 
@@ -275,11 +276,11 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.45 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button variant="primary" size="lg" href="#join">
+              <Button variant="primary" size="lg" href={STUDENT_FORM_URL}>
                 Find a Mentor
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="secondary" size="lg" href="#mentors">
+              <Button variant="secondary" size="lg" href={MENTOR_FORM_URL}>
                 <Users className="w-5 h-5" />
                 Become a Mentor
               </Button>

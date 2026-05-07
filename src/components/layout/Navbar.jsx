@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Globe } from 'lucide-react'
 import Button from '../ui/Button'
+import { MENTOR_FORM_URL, STUDENT_FORM_URL } from '../../config'
 
 const navLinks = [
   { label: 'How It Works', href: '#how-it-works' },
@@ -61,10 +62,10 @@ export default function Navbar() {
 
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-3">
-              <Button variant="secondary" size="sm" href="#mentors">
+              <Button variant="secondary" size="sm" href={MENTOR_FORM_URL}>
                 Become a Mentor
               </Button>
-              <Button variant="primary" size="sm" href="#join">
+              <Button variant="primary" size="sm" href={STUDENT_FORM_URL}>
                 Find a Mentor
               </Button>
             </div>
@@ -103,10 +104,10 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
-                <Button variant="secondary" href="#mentors" className="w-full justify-center">
+                <Button variant="secondary" href={MENTOR_FORM_URL} className="w-full justify-center">
                   Become a Mentor
                 </Button>
-                <Button variant="primary" href="#join" className="w-full justify-center">
+                <Button variant="primary" href={STUDENT_FORM_URL} className="w-full justify-center">
                   Find a Mentor
                 </Button>
               </div>

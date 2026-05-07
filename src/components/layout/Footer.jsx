@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { Globe, Twitter, Linkedin, Github, Mail, Heart } from 'lucide-react'
+import { MENTOR_FORM_URL, STUDENT_FORM_URL, CONTACT_EMAIL } from '../../config'
 
 const footerLinks = {
   Platform: [
-    { label: 'Find a Mentor',    href: '#join' },
-    { label: 'Become a Mentor',  href: '#mentors' },
+    { label: 'Find a Mentor',    href: STUDENT_FORM_URL },
+    { label: 'Become a Mentor',  href: MENTOR_FORM_URL },
     { label: 'Mentorship Areas', href: '#areas' },
     { label: 'Success Stories',  href: '#testimonials' },
   ],
@@ -18,7 +19,7 @@ const footerLinks = {
     { label: 'Events & Workshops', href: '#events' },
     { label: 'Community Impact',   href: '#impact' },
     { label: 'FAQ',                href: '#faq' },
-    { label: 'Contact Us',         href: 'mailto:hello@sudanbridge.org' },
+    { label: 'Contact Us',         href: `mailto:${CONTACT_EMAIL}` },
   ],
 }
 
@@ -26,7 +27,7 @@ const socials = [
   { Icon: Twitter,  href: '#', label: 'Twitter' },
   { Icon: Linkedin, href: '#', label: 'LinkedIn' },
   { Icon: Github,   href: 'https://github.com/sudanbridge', label: 'GitHub' },
-  { Icon: Mail,     href: 'mailto:hello@sudanbridge.org', label: 'Email' },
+  { Icon: Mail,     href: `mailto:${CONTACT_EMAIL}`, label: 'Email' },
 ]
 
 export default function Footer() {

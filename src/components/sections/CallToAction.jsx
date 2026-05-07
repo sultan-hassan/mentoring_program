@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Users, GraduationCap, Building2, Sparkles } from 'lucide-react'
+import { MENTOR_FORM_URL, STUDENT_FORM_URL, CONTACT_EMAIL } from '../../config'
 
 const paths = [
   {
@@ -7,7 +8,7 @@ const paths = [
     title: 'I\'m a Student',
     description: 'Ready to connect with a Sudanese professional who gets where you\'re from and knows where you\'re going?',
     cta: 'Find My Mentor',
-    href: '#join',
+    href: STUDENT_FORM_URL,
     color: 'brand',
     gradient: 'from-brand-500 to-teal-500',
     glow: 'shadow-brand-500/40',
@@ -17,7 +18,7 @@ const paths = [
     title: 'I\'m a Professional',
     description: 'Your journey — from Sudan to where you are now — is exactly the story a student needs to hear. Give 2 hours a month.',
     cta: 'Volunteer as Mentor',
-    href: '#mentors',
+    href: MENTOR_FORM_URL,
     color: 'gold',
     gradient: 'from-gold-500 to-amber-400',
     glow: 'shadow-gold-500/40',
@@ -27,7 +28,7 @@ const paths = [
     title: 'We\'re an Organization',
     description: 'Partner with us to sponsor programs, host events, or integrate SudanBridge into your CSR or academic initiatives.',
     cta: 'Explore Partnership',
-    href: 'mailto:hello@sudanbridge.org',
+    href: `mailto:${CONTACT_EMAIL}`,
     color: 'violet',
     gradient: 'from-violet-500 to-purple-500',
     glow: 'shadow-violet-500/40',
@@ -127,14 +128,14 @@ export default function CallToAction() {
             <p className="text-brand-400 font-semibold mb-8">— SudanBridge</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="#join"
+                href={STUDENT_FORM_URL}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-lg shadow-xl shadow-brand-500/30 hover:-translate-y-1 transition-all"
               >
                 Join the Community
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@sudanbridge.org"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-lg border border-white/20 hover:border-white/40 hover:-translate-y-1 transition-all"
               >
                 Get in Touch

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { MapPin, Briefcase, ArrowRight, Quote } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
+import { MENTOR_FORM_URL } from '../../config'
 
 const mentors = [
   {
@@ -146,7 +147,7 @@ export default function MentorSpotlight() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
             <a
-              href="#join"
+              href={MENTOR_FORM_URL}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold shadow-lg shadow-brand-500/25 transition-all hover:-translate-y-0.5 whitespace-nowrap"
             >
               Become a Mentor
