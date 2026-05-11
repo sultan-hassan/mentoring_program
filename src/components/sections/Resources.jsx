@@ -8,49 +8,49 @@ const resources = [
     icon: FileText,
     title: 'CV & Resume Templates',
     description: 'Professional, ATS-optimized CV templates tailored for international job markets — with step-by-step guides.',
-    tag: 'Free Download',
+    tag: 'Coming Soon',
     color: 'from-brand-500 to-teal-500',
-    tagColor: 'bg-brand-100 text-brand-700',
+    tagColor: 'bg-slate-100 text-slate-500',
   },
   {
     icon: Globe,
     title: 'Portfolio Building Guide',
     description: 'Create a personal website that showcases your work. Includes GitHub setup, project documentation, and design tips.',
-    tag: 'Workshop',
+    tag: 'Coming Soon',
     color: 'from-violet-500 to-purple-500',
-    tagColor: 'bg-violet-100 text-violet-700',
+    tagColor: 'bg-slate-100 text-slate-500',
   },
   {
     icon: LinkedinIcon,
     title: 'LinkedIn Optimization',
     description: 'A step-by-step guide to building a LinkedIn profile that attracts recruiters, mentors, and opportunities globally.',
-    tag: 'Guide',
+    tag: 'Coming Soon',
     color: 'from-blue-500 to-cyan-500',
-    tagColor: 'bg-blue-100 text-blue-700',
+    tagColor: 'bg-slate-100 text-slate-500',
   },
   {
     icon: BookOpen,
     title: 'Scholarship Database',
     description: 'Curated list of scholarships, fellowships, and fully-funded programs open to Sudanese students worldwide.',
-    tag: 'Regularly Updated',
+    tag: 'Coming Soon',
     color: 'from-gold-500 to-amber-400',
-    tagColor: 'bg-amber-100 text-amber-700',
+    tagColor: 'bg-slate-100 text-slate-500',
   },
   {
     icon: Award,
     title: 'Interview Preparation',
     description: 'Mock interview guides, common technical and behavioral questions, and practice frameworks for top-tier companies.',
-    tag: 'Practice Sessions',
+    tag: 'Coming Soon',
     color: 'from-rose-500 to-pink-500',
-    tagColor: 'bg-rose-100 text-rose-700',
+    tagColor: 'bg-slate-100 text-slate-500',
   },
   {
     icon: Mic,
     title: 'Networking Masterclass',
     description: 'Learn how to reach out to professionals, write cold emails, attend conferences, and build a lasting professional network.',
-    tag: 'Video Series',
+    tag: 'Coming Soon',
     color: 'from-indigo-500 to-blue-400',
-    tagColor: 'bg-indigo-100 text-indigo-700',
+    tagColor: 'bg-slate-100 text-slate-500',
   },
 ]
 
@@ -78,7 +78,7 @@ export default function Resources() {
         <SectionHeader
           badge="Free Resources"
           title={<>Everything you need to<br /><span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600">launch your career</span></>}
-          subtitle="Practical, real-world resources created by professionals who've been through the process — and want to make it easier for you."
+          subtitle="These are the resources we're building — created by and with our mentor community. They'll be free and open to all students once we launch."
           light
         />
 
@@ -109,9 +109,8 @@ export default function Resources() {
               <h3 className="text-slate-900 font-bold text-lg mb-3">{title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
 
-              <div className="mt-5 flex items-center text-brand-600 text-sm font-semibold group-hover:gap-2 gap-1 transition-all duration-200">
-                <span>Access resource</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              <div className="mt-5 flex items-center text-slate-400 text-sm font-medium gap-1">
+                <span>Available at launch</span>
               </div>
             </motion.div>
           ))}
@@ -124,10 +123,10 @@ export default function Resources() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <Button variant="primary" size="lg" href="#join">
-            Access All Resources Free
+          <Button variant="primary" size="lg" href="#mentors">
+            Help Us Build These Resources
           </Button>
-          <p className="text-slate-500 text-sm mt-3">No cost, no strings — just knowledge.</p>
+          <p className="text-slate-500 text-sm mt-3">Apply as a mentor and help shape what we create.</p>
         </motion.div>
       </div>
     </section>

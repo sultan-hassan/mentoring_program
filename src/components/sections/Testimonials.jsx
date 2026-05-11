@@ -1,195 +1,113 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Heart, Globe2, Lightbulb, Users, ArrowRight } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 
-const testimonials = [
+const reasons = [
   {
-    quote: "I had no idea how to write a CV. After three sessions with my mentor in London, I had a professional resume and a LinkedIn profile. Two months later, I got my first internship offer. This platform changed everything for me.",
-    name: 'Amira Hassan',
-    role: 'Computer Science Student, Khartoum University',
-    country: '🇸🇩',
-    avatar: 'AH',
-    color: '#10b981',
-    stars: 5,
+    icon: Heart,
+    title: 'Stay connected to Sudan',
+    description: 'Living abroad can feel like growing distant from home. Mentoring is a way to stay rooted — to invest in the next generation and give back to the community that shaped you.',
+    color: 'text-rose-400',
+    bg: 'bg-rose-500/10',
+    border: 'border-rose-500/20',
   },
   {
-    quote: "I've been a software engineer in Toronto for 12 years. Mentoring through SudanBridge is the most meaningful thing I do. Watching Sudanese students discover what's possible — that feeling is irreplaceable.",
-    name: 'Mohammed Al-Amin',
-    role: 'Senior Software Engineer, Toronto',
-    country: '🇨🇦',
-    avatar: 'MA',
-    color: '#f59e0b',
-    stars: 5,
+    icon: Globe2,
+    title: 'Pay forward your opportunity',
+    description: 'Someone opened a door for you once — a professor, a colleague, a chance meeting. Now you have the chance to be that person for a Sudanese student who has no one else to turn to.',
+    color: 'text-brand-400',
+    bg: 'bg-brand-500/10',
+    border: 'border-brand-500/20',
   },
   {
-    quote: "I was studying medicine with no idea about specialization paths, scholarships, or global programs. My mentor — a Sudanese cardiologist in the UK — opened doors I didn't even know existed.",
-    name: 'Sara Osman',
-    role: 'Medical Student, Sudan',
-    country: '🇸🇩',
-    avatar: 'SO',
-    color: '#7c3aed',
-    stars: 5,
+    icon: Lightbulb,
+    title: 'Share what school didn\'t teach',
+    description: 'The most valuable career lessons — how to network, how to negotiate, how to navigate a foreign job market — are never written down. You carry them. Share them.',
+    color: 'text-gold-400',
+    bg: 'bg-gold-500/10',
+    border: 'border-gold-500/20',
   },
   {
-    quote: "As a researcher in Berlin, I felt disconnected from Sudan. SudanBridge gave me a way to contribute. My mentee just got accepted to a fully-funded PhD program in Germany. I cried when she told me.",
-    name: 'Dr. Khalid Ibrahim',
-    role: 'AI Researcher, TU Berlin',
-    country: '🇩🇪',
-    avatar: 'KI',
-    color: '#0891b2',
-    stars: 5,
-  },
-  {
-    quote: "I wanted to start a tech company but had no one to ask about business models, funding, or strategy. My mentor in Dubai walked me through everything. We just launched our first product.",
-    name: 'Nour Al-Rashid',
-    role: 'Young Entrepreneur, Omdurman',
-    country: '🇸🇩',
-    avatar: 'NR',
-    color: '#dc2626',
-    stars: 5,
-  },
-  {
-    quote: "The portfolio workshop alone was worth everything. I now have a GitHub profile, a personal website, and three live projects. My mentor reviews my code every two weeks. It feels like having a senior engineer by my side.",
-    name: 'Yusuf Salim',
-    role: 'Computer Engineering Student',
-    country: '🇸🇩',
-    avatar: 'YS',
-    color: '#059669',
-    stars: 5,
+    icon: Users,
+    title: 'Build something that lasts',
+    description: 'One conversation can redirect a career. One hour a month from you could determine whether a Sudanese student reaches their potential or never discovers it.',
+    color: 'text-violet-400',
+    bg: 'bg-violet-500/10',
+    border: 'border-violet-500/20',
   },
 ]
 
-function StarRating({ count }) {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="w-4 h-4 fill-gold-400 text-gold-400" />
-      ))}
-    </div>
-  )
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.13 } },
+}
+
+const card = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
 export default function Testimonials() {
-  const [active, setActive] = useState(0)
-  const [direction, setDirection] = useState(1)
-
-  const navigate = (dir) => {
-    setDirection(dir)
-    setActive((prev) => (prev + dir + testimonials.length) % testimonials.length)
-  }
-
-  const t = testimonials[active]
-
   return (
-    <section id="testimonials" className="bg-night-950 py-24 lg:py-32 relative overflow-hidden">
+    <section id="why-mentor" className="bg-night-950 py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 grid-overlay opacity-30" />
-      {/* Gradient orbs */}
       <div className="absolute left-0 top-1/2 w-80 h-80 bg-brand-900/20 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute right-0 top-1/2 w-80 h-80 bg-violet-900/20 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Stories of Impact"
-          title={<>Real people.<br /><span className="text-gradient">Real change.</span></>}
-          subtitle="These aren't hypotheticals. These are the voices of students and mentors whose lives have been shaped by this community."
+          badge="Why Mentor?"
+          title={<>Four reasons to<br /><span className="text-gradient">give one hour.</span></>}
+          subtitle="You don't need to be famous, published, or have decades of experience. You just need to have walked a path a Sudanese student hasn't walked yet."
         />
 
-        {/* Featured testimonial */}
-        <div className="max-w-4xl mx-auto">
-          <AnimatePresence mode="wait" custom={direction}>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
+        >
+          {reasons.map(({ icon: Icon, title, description, color, bg, border }) => (
             <motion.div
-              key={active}
-              custom={direction}
-              initial={{ opacity: 0, x: direction * 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: direction * -60 }}
-              transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="glass rounded-3xl p-8 md:p-12 border border-white/10 mb-8 relative"
+              key={title}
+              variants={card}
+              whileHover={{ y: -4 }}
+              className={`glass rounded-2xl p-8 border ${border} hover:bg-white/5 transition-all duration-300 group`}
             >
-              <Quote className="w-10 h-10 text-brand-500/30 mb-6" />
-              <p className="text-xl md:text-2xl text-white leading-relaxed font-light mb-8 italic">
-                "{t.quote}"
-              </p>
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-4">
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm ring-2 ring-white/10"
-                    style={{ backgroundColor: t.color }}
-                  >
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold">{t.country} {t.name}</p>
-                    <p className="text-slate-400 text-sm">{t.role}</p>
-                  </div>
-                </div>
-                <StarRating count={t.stars} />
+              <div className={`w-12 h-12 rounded-xl ${bg} border ${border} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <Icon className={`w-5 h-5 ${color}`} />
               </div>
+              <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+              <p className="text-slate-400 leading-relaxed">{description}</p>
             </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation */}
-          <div className="flex items-center justify-center gap-4">
-            <button
-              onClick={() => navigate(-1)}
-              className="w-10 h-10 rounded-full glass border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            {/* Dots */}
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setDirection(i > active ? 1 : -1); setActive(i) }}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === active ? 'w-6 h-2.5 bg-brand-500' : 'w-2.5 h-2.5 bg-white/20 hover:bg-white/40'
-                  }`}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={() => navigate(1)}
-              className="w-10 h-10 rounded-full glass border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Mini cards row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-12">
-          {testimonials.map((t, i) => (
-            <motion.button
-              key={i}
-              onClick={() => { setDirection(i > active ? 1 : -1); setActive(i) }}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-              className={`p-3 rounded-xl text-left transition-all duration-200 border ${
-                i === active
-                  ? 'bg-brand-500/15 border-brand-500/40'
-                  : 'glass border-white/5 hover:bg-white/5'
-              }`}
-            >
-              <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold mb-2"
-                style={{ backgroundColor: t.color }}
-              >
-                {t.avatar}
-              </div>
-              <p className="text-white text-xs font-medium truncate">{t.name.split(' ')[0]}</p>
-              <p className="text-slate-500 text-xs truncate">{t.country}</p>
-            </motion.button>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Commitment callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="glass rounded-3xl p-8 md:p-12 border border-brand-500/20 text-center"
+          style={{ background: 'linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(5,150,105,0.03) 100%)' }}
+        >
+          <p className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Just{' '}
+            <span className="text-gradient">1 hour per month.</span>
+          </p>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8">
+            That's all we ask. One session per month with a student in your field. Video call, chat, or async — on your schedule, in your timezone.
+          </p>
+          <a
+            href="#mentors"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-lg shadow-xl shadow-brand-500/30 hover:-translate-y-1 transition-all"
+          >
+            Apply to be a Mentor
+            <ArrowRight className="w-5 h-5" />
+          </a>
+        </motion.div>
       </div>
     </section>
   )

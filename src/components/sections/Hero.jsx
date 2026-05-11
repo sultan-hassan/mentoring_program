@@ -184,7 +184,7 @@ function GlobeVisual() {
         </motion.text>
       </svg>
 
-      {/* Floating stat badges */}
+      {/* Launch status badge */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -193,24 +193,10 @@ function GlobeVisual() {
         style={{ animationDelay: '0s' }}
       >
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
-          <span className="text-white font-semibold">150+ Mentors</span>
-        </div>
-        <p className="text-slate-400 text-xs mt-0.5">Across 30+ countries</p>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2.5, duration: 0.6 }}
-        className="absolute bottom-16 right-0 glass rounded-2xl px-4 py-3 text-sm animate-float"
-        style={{ animationDelay: '2s' }}
-      >
-        <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
-          <span className="text-white font-semibold">500+ Students</span>
+          <span className="text-white font-semibold">Now Launching</span>
         </div>
-        <p className="text-slate-400 text-xs mt-0.5">Connected & growing</p>
+        <p className="text-slate-400 text-xs mt-0.5">Mentors & volunteers welcome</p>
       </motion.div>
     </motion.div>
   )
@@ -286,28 +272,19 @@ export default function Hero() {
               </Button>
             </motion.div>
 
-            {/* Social proof */}
+            {/* Launch call */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.65 }}
-              className="mt-12 flex items-center gap-6"
+              className="mt-10 flex items-start gap-3 px-5 py-4 rounded-2xl bg-brand-500/8 border border-brand-500/20"
             >
-              <div className="flex -space-x-2.5">
-                {['#10b981','#0891b2','#7c3aed','#dc2626','#d97706'].map((color, i) => (
-                  <div
-                    key={i}
-                    className="w-9 h-9 rounded-full border-2 border-night-950 flex items-center justify-center text-xs font-bold text-white"
-                    style={{ backgroundColor: color }}
-                  >
-                    {['AM','HA','SA','MK','NA'][i]}
-                  </div>
-                ))}
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">150+ Mentors ready</p>
-                <p className="text-slate-500 text-xs">Across engineering, medicine, finance & more</p>
-              </div>
+              <div className="w-2 h-2 rounded-full bg-brand-400 mt-1.5 animate-pulse flex-shrink-0" />
+              <p className="text-slate-300 text-sm leading-relaxed">
+                <span className="text-brand-400 font-semibold">We're just getting started.</span>{' '}
+                If you're a Sudanese professional anywhere in the world and can spare just{' '}
+                <span className="text-white font-semibold">1 hour per month</span>, we want you.
+              </p>
             </motion.div>
           </div>
 

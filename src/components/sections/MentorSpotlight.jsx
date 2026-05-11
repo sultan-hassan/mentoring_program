@@ -1,48 +1,45 @@
 import { motion } from 'framer-motion'
-import { MapPin, Briefcase, ArrowRight, Quote } from 'lucide-react'
+import { Code2, Stethoscope, Lightbulb, ArrowRight, Clock, Globe2, Heart } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import { MENTOR_FORM_URL } from '../../config'
 
-const mentors = [
+const archetypes = [
   {
-    initials: 'AM',
-    name: 'Amani Mohammed',
-    title: 'Principal Engineer',
-    company: 'Google DeepMind',
-    location: 'London, UK',
-    flag: '🇬🇧',
-    areas: ['AI & Machine Learning', 'Software Engineering'],
-    quote: 'I want every Sudanese student to know that a seat at the table was always meant for them.',
-    sessions: 42,
+    icon: Code2,
+    emoji: '💻',
+    title: 'The Engineer',
+    fields: ['Software Engineering', 'AI & Data Science', 'Cybersecurity', 'Product'],
+    pitch: 'You\'ve shipped products, navigated tech interviews, built careers in some of the world\'s top companies. A Sudanese student wants to know how you got there.',
     color: '#10b981',
     gradient: 'from-brand-500/20 to-teal-500/10',
+    border: 'border-brand-500/20',
   },
   {
-    initials: 'KO',
-    name: 'Dr. Khalid Omar',
-    title: 'Cardiologist & Researcher',
-    company: 'Johns Hopkins Medicine',
-    location: 'Baltimore, USA',
-    flag: '🇺🇸',
-    areas: ['Medicine', 'Academia & Research'],
-    quote: 'Medicine is not just about healing bodies — it\'s about healing communities. Mentorship is medicine.',
-    sessions: 67,
+    icon: Stethoscope,
+    emoji: '🩺',
+    title: 'The Doctor & Researcher',
+    fields: ['Medicine', 'Public Health', 'Academia', 'Biotech'],
+    pitch: 'You know which scholarships are worth applying for, which specializations open doors, and how to write a personal statement that stands out. Share it.',
     color: '#7c3aed',
     gradient: 'from-violet-500/20 to-purple-500/10',
+    border: 'border-violet-500/20',
   },
   {
-    initials: 'NI',
-    name: 'Nadia Ibrahim',
-    title: 'Founder & CEO',
-    company: 'TechBridge MENA',
-    location: 'Dubai, UAE',
-    flag: '🇦🇪',
-    areas: ['Entrepreneurship', 'Product Management'],
-    quote: 'I founded three companies. The only thing harder than building a startup is building it without guidance. Let me be that guidance.',
-    sessions: 38,
+    icon: Lightbulb,
+    emoji: '🚀',
+    title: 'The Entrepreneur & Leader',
+    fields: ['Startups', 'Finance', 'Consulting', 'Design', 'Law'],
+    pitch: 'You\'ve built things, led teams, navigated unfamiliar environments. The lessons you learned the hard way are exactly what a young Sudanese professional needs to hear.',
     color: '#f59e0b',
     gradient: 'from-gold-500/20 to-amber-400/10',
+    border: 'border-gold-500/20',
   },
+]
+
+const commitments = [
+  { icon: Clock,  text: '1 hour per month minimum' },
+  { icon: Globe2, text: 'Any country, any timezone' },
+  { icon: Heart,  text: 'Any field — all experience counts' },
 ]
 
 export default function MentorSpotlight() {
@@ -53,107 +50,99 @@ export default function MentorSpotlight() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Mentor Spotlight"
-          title={<>Meet the people<br /><span className="text-gradient">behind the mission</span></>}
-          subtitle="These are real Sudanese professionals who volunteered their time, knowledge, and hearts to guide the next generation."
+          badge="Become a Mentor"
+          title={<>We're looking for<br /><span className="text-gradient">people like you</span></>}
+          subtitle="We're recruiting our founding cohort of mentors. No prior teaching experience needed — just lived experience and an hour a month."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
-          {mentors.map(({ initials, name, title, company, location, flag, areas, quote, sessions, color, gradient }, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+          {archetypes.map(({ icon: Icon, emoji, title, fields, pitch, color, gradient, border }, index) => (
             <motion.div
-              key={name}
+              key={title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.7, delay: index * 0.15 }}
               whileHover={{ y: -6 }}
-              className="glass rounded-3xl overflow-hidden border border-white/10 group hover:border-white/20 transition-all duration-300"
+              className={`glass rounded-3xl overflow-hidden border ${border} group hover:border-white/20 transition-all duration-300`}
             >
-              {/* Top gradient section */}
-              <div className={`bg-gradient-to-br ${gradient} p-8 pb-12 relative`}>
-                {/* Avatar */}
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-black text-white shadow-2xl mb-4 ring-4 ring-white/10"
-                  style={{ backgroundColor: color }}
-                >
-                  {initials}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">{name}</h3>
-                <p className="text-slate-300 text-sm font-medium">{title}</p>
-                <p className="text-slate-400 text-sm">{company}</p>
-              </div>
-
-              <div className="p-6 -mt-6">
-                {/* Location */}
-                <div className="flex items-center gap-2 text-slate-400 text-sm mb-4">
-                  <MapPin className="w-3.5 h-3.5" />
-                  {flag} {location}
-                </div>
-
-                {/* Areas */}
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {areas.map((area) => (
+              <div className={`bg-gradient-to-br ${gradient} p-8 pb-6`}>
+                <div className="text-4xl mb-4">{emoji}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {fields.map((f) => (
                     <span
-                      key={area}
-                      className="text-xs px-2.5 py-1 rounded-full"
-                      style={{ backgroundColor: `${color}18`, color, border: `1px solid ${color}33` }}
+                      key={f}
+                      className="text-xs px-2.5 py-1 rounded-full font-medium"
+                      style={{ backgroundColor: `${color}20`, color, border: `1px solid ${color}33` }}
                     >
-                      {area}
+                      {f}
                     </span>
                   ))}
                 </div>
+              </div>
 
-                {/* Quote */}
-                <div className="glass rounded-xl p-4 mb-5 border border-white/5">
-                  <Quote className="w-4 h-4 text-slate-600 mb-2" />
-                  <p className="text-slate-300 text-sm leading-relaxed italic">"{quote}"</p>
-                </div>
-
-                {/* Stats */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-slate-400 text-sm">
-                    <Briefcase className="w-3.5 h-3.5" />
-                    {sessions} sessions completed
-                  </div>
-                  <button
-                    className="flex items-center gap-1 text-sm font-semibold transition-colors group/btn"
-                    style={{ color }}
-                  >
-                    Request session
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
+              <div className="p-6">
+                <p className="text-slate-300 leading-relaxed text-sm mb-6 italic">"{pitch}"</p>
+                <a
+                  href={MENTOR_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-semibold transition-all group/btn"
+                  style={{ color }}
+                >
+                  Apply as {title.split(' ')[1] || 'Mentor'}
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Join as mentor CTA */}
+        {/* Commitment bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+          className="glass rounded-2xl p-6 border border-white/10 flex flex-col sm:flex-row items-center justify-center gap-8 mb-12"
+        >
+          {commitments.map(({ icon: Icon, text }) => (
+            <div key={text} className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0">
+                <Icon className="w-4 h-4 text-brand-400" />
+              </div>
+              <span className="text-white font-medium text-sm">{text}</span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Primary CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
           className="glass rounded-3xl p-8 md:p-12 border border-brand-500/20 flex flex-col md:flex-row items-center justify-between gap-8"
           style={{ background: 'linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(5,150,105,0.03) 100%)' }}
         >
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              Are you a Sudanese professional abroad?
+              Ready to be one of our founding mentors?
             </h3>
             <p className="text-slate-400 text-lg max-w-lg">
-              Join 150+ mentors who are shaping the next generation. It takes just a few hours a month.
+              The first cohort sets the tone for everything. Be part of building this from the ground up.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
-            <a
-              href={MENTOR_FORM_URL}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold shadow-lg shadow-brand-500/25 transition-all hover:-translate-y-0.5 whitespace-nowrap"
-            >
-              Become a Mentor
-              <ArrowRight className="w-5 h-5" />
-            </a>
-          </div>
+          <a
+            href={MENTOR_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-lg shadow-lg shadow-brand-500/30 hover:-translate-y-0.5 transition-all whitespace-nowrap flex-shrink-0"
+          >
+            Apply to Mentor
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </motion.div>
       </div>
     </section>

@@ -2,39 +2,35 @@ import { motion } from 'framer-motion'
 import { TrendingDown, Globe2, BookOpen, Network } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 
-const stats = [
+const challenges = [
   {
     icon: TrendingDown,
-    number: '70%',
-    label: 'of Sudanese students',
-    detail: 'have never spoken with a professional in their desired field',
+    title: 'No career visibility',
+    detail: 'Most Sudanese students have never had a real conversation with a professional working in their area of interest — the guidance simply isn\'t accessible.',
     color: 'text-red-400',
     bg: 'bg-red-500/10',
     border: 'border-red-500/20',
   },
   {
     icon: Globe2,
-    number: '3M+',
-    label: 'Sudanese professionals',
-    detail: 'live in the diaspora — an untapped resource of knowledge and experience',
+    title: 'An untapped diaspora',
+    detail: 'Millions of Sudanese professionals live and work abroad — in engineering, medicine, finance, academia, and more. Their knowledge and experience rarely makes it back home.',
     color: 'text-gold-400',
     bg: 'bg-gold-500/10',
     border: 'border-gold-500/20',
   },
   {
     icon: BookOpen,
-    number: '1 in 10',
-    label: 'Sudanese students',
-    detail: 'has access to professional guidance for CVs, LinkedIn, or scholarships',
+    title: 'Missing the basics',
+    detail: 'Applying for a scholarship, writing a CV, or building a LinkedIn profile feels out of reach without someone who\'s done it before to show you how.',
     color: 'text-blue-400',
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/20',
   },
   {
     icon: Network,
-    number: '85%',
-    label: 'of top scholarships',
-    detail: 'go to students with professional networks and polished application materials',
+    title: 'Networks start early',
+    detail: 'Opportunity flows through networks. Students who have professional connections — even one strong mentor — reach outcomes that others simply can\'t access alone.',
     color: 'text-brand-400',
     bg: 'bg-brand-500/10',
     border: 'border-brand-500/20',
@@ -54,7 +50,6 @@ const item = {
 export default function Problem() {
   return (
     <section id="problem" className="bg-night-950 py-24 lg:py-32 relative overflow-hidden">
-      {/* Subtle background accent */}
       <div className="absolute inset-0 grid-overlay opacity-50" />
       <div className="absolute right-0 top-0 w-96 h-96 bg-brand-900/20 rounded-full blur-3xl" />
 
@@ -62,10 +57,10 @@ export default function Problem() {
         <SectionHeader
           badge="The Challenge"
           title={<>The gap we're<br /><span className="text-gradient">here to close</span></>}
-          subtitle="Thousands of brilliant Sudanese students are navigating their futures alone — without mentors, without networks, without guidance. The knowledge exists. The distance is the only problem."
+          subtitle="Brilliant Sudanese students are navigating their futures without the guidance that students elsewhere take for granted. The knowledge exists in our diaspora — the connection doesn't."
         />
 
-        {/* Stats grid */}
+        {/* Challenge cards */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -73,18 +68,17 @@ export default function Problem() {
           viewport={{ once: true, margin: '-80px' }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
         >
-          {stats.map(({ icon: Icon, number, label, detail, color, bg, border }) => (
+          {challenges.map(({ icon: Icon, title, detail, color, bg, border }) => (
             <motion.div
-              key={label}
+              key={title}
               variants={item}
               className={`glass rounded-2xl p-6 border ${border} hover:bg-white/8 transition-all duration-300 group`}
             >
               <div className={`w-11 h-11 rounded-xl ${bg} border ${border} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
                 <Icon className={`w-5 h-5 ${color}`} />
               </div>
-              <p className={`text-4xl font-black mb-2 ${color}`}>{number}</p>
-              <p className="text-white font-semibold text-sm mb-2">{label}</p>
-              <p className="text-slate-500 text-sm leading-relaxed">{detail}</p>
+              <h3 className={`text-lg font-bold mb-3 ${color}`}>{title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{detail}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -117,20 +111,20 @@ export default function Problem() {
             className="space-y-4"
           >
             {[
-              { text: 'No access to CV and portfolio guidance', fixed: 'Professional templates & workshops' },
-              { text: 'No professional networking skills', fixed: 'LinkedIn optimization & networking training' },
-              { text: 'No visibility into global opportunities', fixed: 'Scholarship & internship databases' },
-              { text: 'No role models in technical fields', fixed: 'Mentor spotlights & career showcases' },
-            ].map(({ text, fixed }) => (
-              <div key={text} className="glass rounded-xl p-5 border border-white/5 flex items-start gap-4">
+              { problem: 'No access to CV and portfolio guidance',    solution: 'Professional templates & workshops' },
+              { problem: 'No professional networking skills',         solution: 'LinkedIn optimization & networking training' },
+              { problem: 'No visibility into global opportunities',   solution: 'Scholarship & internship guidance' },
+              { problem: 'No role models in technical fields',        solution: 'Mentors who share their real journeys' },
+            ].map(({ problem, solution }) => (
+              <div key={problem} className="glass rounded-xl p-5 border border-white/5 flex items-start gap-4">
                 <div className="mt-0.5 flex-shrink-0">
                   <div className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center">
                     <span className="text-red-400 text-xs">✕</span>
                   </div>
                 </div>
                 <div>
-                  <p className="text-slate-400 text-sm line-through opacity-60">{text}</p>
-                  <p className="text-brand-400 text-sm font-medium mt-1">→ {fixed}</p>
+                  <p className="text-slate-400 text-sm line-through opacity-60">{problem}</p>
+                  <p className="text-brand-400 text-sm font-medium mt-1">→ {solution}</p>
                 </div>
               </div>
             ))}

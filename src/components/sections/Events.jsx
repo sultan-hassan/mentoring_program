@@ -1,45 +1,33 @@
 import { motion } from 'framer-motion'
-import { Calendar, Clock, Users, ArrowRight, Video, Mic2, PenLine } from 'lucide-react'
+import { Video, PenLine, Mic2, Bell, ArrowRight } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
-import Button from '../ui/Button'
+import { MENTOR_FORM_URL, CONTACT_EMAIL } from '../../config'
 
-const events = [
+const planned = [
   {
     icon: Video,
-    type: 'Virtual Talk',
-    title: 'Breaking Into Big Tech: A Sudanese Engineer\'s Journey',
-    date: 'June 14, 2025',
-    time: '7:00 PM EAT',
-    speaker: 'Ahmed Mustafa',
-    speakerRole: 'Staff Engineer at Meta, London',
-    spots: 48,
-    spotsLeft: 12,
+    type: 'Virtual Kickoff',
+    title: 'SudanBridge Launch Event',
+    description: 'Our first community gathering — meet the founding mentors, hear from students, and help shape what this community becomes.',
+    status: 'Coming soon',
     color: 'from-brand-500 to-teal-500',
     badge: 'bg-brand-500/15 text-brand-400 border-brand-500/30',
   },
   {
     icon: PenLine,
     type: 'Workshop',
-    title: 'CV & LinkedIn Masterclass: Get Noticed by Global Recruiters',
-    date: 'June 21, 2025',
-    time: '5:00 PM EAT',
-    speaker: 'Hana Al-Nour',
-    speakerRole: 'Talent Lead at Spotify, Stockholm',
-    spots: 30,
-    spotsLeft: 7,
+    title: 'CV & LinkedIn Masterclass',
+    description: 'A practical session for students — how to write a CV for international opportunities and build a LinkedIn profile that gets noticed.',
+    status: 'Planning stage',
     color: 'from-gold-500 to-amber-400',
     badge: 'bg-gold-500/15 text-gold-400 border-gold-500/30',
   },
   {
     icon: Mic2,
     type: 'Panel',
-    title: 'Paths to Medicine Abroad: Scholarships, Residencies & Research',
-    date: 'July 3, 2025',
-    time: '6:30 PM EAT',
-    speaker: 'Dr. Sara Fadlalla + 3 panelists',
-    speakerRole: 'Cardiologist, NHS London',
-    spots: 80,
-    spotsLeft: 34,
+    title: 'Paths to Global Careers',
+    description: 'Sudanese professionals from different fields share their journeys — how they got there, what they wish they knew, and what\'s possible for students today.',
+    status: 'Planning stage',
     color: 'from-violet-500 to-purple-500',
     badge: 'bg-violet-500/15 text-violet-400 border-violet-500/30',
   },
@@ -58,100 +46,69 @@ export default function Events() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Events & Workshops"
-          title={<>Learn from the<br /><span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600">best in the world</span></>}
-          subtitle="Free virtual events featuring Sudanese professionals sharing their stories, expertise, and guidance. Live Q&As, workshops, and networking."
+          title={<>Our first events<br /><span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600">are coming</span></>}
+          subtitle="We're planning our first community events. Dates will be set once our founding mentor cohort is in place — follow along to be notified."
           light
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-          {events.map(({ icon: Icon, type, title, date, time, speaker, speakerRole, spots, spotsLeft, color, badge }, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14">
+          {planned.map(({ icon: Icon, type, title, description, status, color, badge }, index) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.65, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-              whileHover={{ y: -6 }}
-              className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              transition={{ duration: 0.65, delay: index * 0.15 }}
+              className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group"
             >
-              {/* Top gradient bar */}
               <div className={`h-1.5 bg-gradient-to-r ${color}`} />
-
               <div className="p-6">
-                {/* Type badge */}
                 <div className="flex items-center justify-between mb-4">
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${badge}`}>
                     <Icon className="w-3 h-3" />
                     {type}
                   </span>
-                  <span className="text-xs font-semibold text-rose-500 bg-rose-50 px-2 py-1 rounded-full">
-                    {spotsLeft} spots left
+                  <span className="text-xs font-semibold text-slate-400 bg-slate-50 px-2 py-1 rounded-full border border-slate-200">
+                    {status}
                   </span>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-slate-900 font-bold text-lg leading-snug mb-4 group-hover:text-brand-600 transition-colors">
-                  {title}
-                </h3>
-
-                {/* Meta */}
-                <div className="space-y-2 mb-5">
-                  <div className="flex items-center gap-2 text-slate-500 text-sm">
-                    <Calendar className="w-4 h-4 flex-shrink-0" />
-                    {date}
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-500 text-sm">
-                    <Clock className="w-4 h-4 flex-shrink-0" />
-                    {time}
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-500 text-sm">
-                    <Users className="w-4 h-4 flex-shrink-0" />
-                    {spots} attendees max
-                  </div>
-                </div>
-
-                {/* Speaker */}
-                <div className="border-t border-slate-100 pt-4">
-                  <p className="text-slate-900 font-semibold text-sm">{speaker}</p>
-                  <p className="text-slate-500 text-xs">{speakerRole}</p>
-                </div>
-
-                {/* Spots bar */}
-                <div className="mt-4">
-                  <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${((spots - spotsLeft) / spots) * 100}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.3 }}
-                      className={`h-full bg-gradient-to-r ${color} rounded-full`}
-                    />
-                  </div>
-                  <p className="text-xs text-slate-400 mt-1">
-                    {spots - spotsLeft} / {spots} registered
-                  </p>
-                </div>
-
-                {/* CTA */}
-                <button className="mt-5 w-full py-2.5 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50 transition-all duration-200 flex items-center justify-center gap-2 group/btn">
-                  Register Free
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                <h3 className="text-slate-900 font-bold text-lg leading-snug mb-3">{title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
+        {/* Notification CTA */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          transition={{ duration: 0.7 }}
+          className="rounded-2xl bg-gradient-to-r from-brand-50 to-teal-50 border border-brand-100 p-8 text-center"
         >
-          <Button variant="outline" href="#events">
-            View All Events
-            <ArrowRight className="w-5 h-5" />
-          </Button>
+          <Bell className="w-8 h-8 text-brand-500 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-slate-900 mb-2">Want to be notified when we launch?</h3>
+          <p className="text-slate-600 mb-6 text-sm max-w-lg mx-auto">
+            Apply to be a mentor or volunteer, and you'll be the first to hear about our kickoff event and first sessions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={MENTOR_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold shadow-lg shadow-brand-500/25 hover:-translate-y-0.5 transition-all"
+            >
+              Apply as a Mentor
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href={`mailto:${CONTACT_EMAIL}?subject=SudanBridge — Stay Updated`}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-brand-200 text-brand-700 font-semibold hover:border-brand-400 hover:bg-brand-50 transition-all"
+            >
+              Send Us a Message
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
