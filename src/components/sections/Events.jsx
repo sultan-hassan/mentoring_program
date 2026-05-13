@@ -3,31 +3,25 @@ import { Video, PenLine, Mic2, Bell, ArrowRight } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import { MENTOR_FORM_URL, CONTACT_EMAIL } from '../../config'
 
-const planned = [
+const formats = [
   {
-    icon: Video,
-    type: 'Virtual Kickoff',
-    title: 'SudanBridge Launch Event',
-    description: 'Our first community gathering — meet the founding mentors, hear from students, and help shape what this community becomes.',
-    status: 'Coming soon',
+    icon: Mic2,
+    title: 'Speaker Sessions',
+    description: 'Sudanese professionals share their career journeys live — the real story of how they got to where they are, what they learned, and what they\'d tell their younger selves.',
     color: 'from-brand-500 to-teal-500',
     badge: 'bg-brand-500/15 text-brand-400 border-brand-500/30',
   },
   {
     icon: PenLine,
-    type: 'Workshop',
-    title: 'CV & LinkedIn Masterclass',
-    description: 'A practical session for students — how to write a CV for international opportunities and build a LinkedIn profile that gets noticed.',
-    status: 'Planning stage',
+    title: 'Practical Workshops',
+    description: 'Hands-on sessions covering the essentials: writing a CV, building a LinkedIn, applying for scholarships, preparing for interviews — guided by professionals who\'ve done it.',
     color: 'from-gold-500 to-amber-400',
     badge: 'bg-gold-500/15 text-gold-400 border-gold-500/30',
   },
   {
-    icon: Mic2,
-    type: 'Panel',
-    title: 'Paths to Global Careers',
-    description: 'Sudanese professionals from different fields share their journeys — how they got there, what they wish they knew, and what\'s possible for students today.',
-    status: 'Planning stage',
+    icon: Video,
+    title: 'Community Conversations',
+    description: 'Open, informal gatherings where students and mentors connect across fields, swap stories, and build the kind of relationships that change career trajectories.',
     color: 'from-violet-500 to-purple-500',
     badge: 'bg-violet-500/15 text-violet-400 border-violet-500/30',
   },
@@ -45,35 +39,30 @@ export default function Events() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Events & Workshops"
-          title={<>Our first events<br /><span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600">are coming</span></>}
-          subtitle="We're planning our first community events. Dates will be set once our founding mentor cohort is in place — follow along to be notified."
+          badge="Events & Sessions"
+          title={<>Learning that<br /><span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600">happens in conversation</span></>}
+          subtitle="Once our mentor cohort is in place, we'll run regular virtual events — free, open, and built around the things Sudanese students actually need to know."
           light
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14">
-          {planned.map(({ icon: Icon, type, title, description, status, color, badge }, index) => (
+          {formats.map(({ icon: Icon, title, description, color, badge }, index) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.65, delay: index * 0.15 }}
-              className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden group"
+              whileHover={{ y: -4 }}
+              className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
             >
               <div className={`h-1.5 bg-gradient-to-r ${color}`} />
               <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${badge}`}>
-                    <Icon className="w-3 h-3" />
-                    {type}
-                  </span>
-                  <span className="text-xs font-semibold text-slate-400 bg-slate-50 px-2 py-1 rounded-full border border-slate-200">
-                    {status}
-                  </span>
-                </div>
-                <h3 className="text-slate-900 font-bold text-lg leading-snug mb-3">{title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border mb-4 ${badge}`}>
+                  <Icon className="w-3 h-3" />
+                  {title}
+                </span>
+                <p className="text-slate-600 text-sm leading-relaxed">{description}</p>
               </div>
             </motion.div>
           ))}
@@ -88,9 +77,9 @@ export default function Events() {
           className="rounded-2xl bg-gradient-to-r from-brand-50 to-teal-50 border border-brand-100 p-8 text-center"
         >
           <Bell className="w-8 h-8 text-brand-500 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-slate-900 mb-2">Want to be notified when we launch?</h3>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">Events start when our mentors do.</h3>
           <p className="text-slate-600 mb-6 text-sm max-w-lg mx-auto">
-            Apply to be a mentor or volunteer, and you'll be the first to hear about our kickoff event and first sessions.
+            Apply to be a mentor now — the first event will bring the founding cohort together with students.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -106,7 +95,7 @@ export default function Events() {
               href={`mailto:${CONTACT_EMAIL}?subject=SudanBridge — Stay Updated`}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-brand-200 text-brand-700 font-semibold hover:border-brand-400 hover:bg-brand-50 transition-all"
             >
-              Send Us a Message
+              Get in Touch
             </a>
           </div>
         </motion.div>

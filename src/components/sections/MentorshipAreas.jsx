@@ -1,29 +1,15 @@
 import { motion } from 'framer-motion'
-import { Code2, Brain, Stethoscope, Lightbulb, BarChart3, Palette, GraduationCap, Database, Layers, Shield } from 'lucide-react'
+import { Sparkles, ArrowRight } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
+import { MENTOR_FORM_URL } from '../../config'
 
-const areas = [
-  { icon: Code2,          label: 'Software Engineering',  desc: 'Web, mobile, backend, frontend, systems', color: 'from-blue-500 to-cyan-500',    bg: 'bg-blue-500/10',    border: 'border-blue-500/20',    text: 'text-blue-400' },
-  { icon: Brain,          label: 'AI & Machine Learning', desc: 'Deep learning, NLP, computer vision',     color: 'from-violet-500 to-purple-500', bg: 'bg-violet-500/10',  border: 'border-violet-500/20',  text: 'text-violet-400' },
-  { icon: Stethoscope,    label: 'Medicine & Healthcare', desc: 'Clinical, research, global health',       color: 'from-rose-500 to-pink-500',     bg: 'bg-rose-500/10',    border: 'border-rose-500/20',    text: 'text-rose-400' },
-  { icon: Lightbulb,      label: 'Entrepreneurship',      desc: 'Startups, venture, product building',    color: 'from-gold-500 to-amber-400',   bg: 'bg-gold-500/10',    border: 'border-gold-500/20',    text: 'text-gold-400' },
-  { icon: BarChart3,      label: 'Finance & Investing',   desc: 'Investment banking, fintech, trading',   color: 'from-brand-500 to-teal-400',   bg: 'bg-brand-500/10',   border: 'border-brand-500/20',   text: 'text-brand-400' },
-  { icon: Palette,        label: 'Design & UX',           desc: 'Product design, branding, interaction',  color: 'from-pink-500 to-rose-400',    bg: 'bg-pink-500/10',    border: 'border-pink-500/20',    text: 'text-pink-400' },
-  { icon: GraduationCap,  label: 'Academia & Research',   desc: 'PhDs, fellowships, academic careers',    color: 'from-indigo-500 to-blue-500',  bg: 'bg-indigo-500/10',  border: 'border-indigo-500/20',  text: 'text-indigo-400' },
-  { icon: Database,       label: 'Data Science',          desc: 'Analytics, BI, statistical modeling',    color: 'from-teal-500 to-cyan-400',    bg: 'bg-teal-500/10',    border: 'border-teal-500/20',    text: 'text-teal-400' },
-  { icon: Layers,         label: 'Product Management',    desc: 'Strategy, roadmap, user research',       color: 'from-orange-500 to-amber-400', bg: 'bg-orange-500/10',  border: 'border-orange-500/20',  text: 'text-orange-400' },
-  { icon: Shield,         label: 'Cybersecurity',         desc: 'InfoSec, ethical hacking, cloud security', color: 'from-red-500 to-rose-400',  bg: 'bg-red-500/10',     border: 'border-red-500/20',     text: 'text-red-400' },
+const broadFields = [
+  'Engineering & Technology', 'Medicine & Healthcare', 'Science & Research',
+  'Business & Entrepreneurship', 'Finance & Economics', 'Law & Policy',
+  'Design & Creative Arts', 'Education & Academia', 'Social Work & NGOs',
+  'Journalism & Media', 'Architecture', 'Agriculture & Environment',
+  'And any other field you work in',
 ]
-
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-}
-
-const card = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] } },
-}
 
 export default function MentorshipAreas() {
   return (
@@ -33,47 +19,91 @@ export default function MentorshipAreas() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Mentorship Areas"
-          title={<>Find your<br /><span className="text-gradient">career path</span></>}
-          subtitle="Whether you're drawn to code, medicine, art, or business — there's a Sudanese professional abroad who's walked that path and wants to guide you."
+          badge="All Fields Welcome"
+          title={<>Any field.<br /><span className="text-gradient">Any discipline.</span></>}
+          subtitle="We're not looking for a specific job title or industry. We're looking for Sudanese professionals with a story to share — whatever their field."
         />
 
+        {/* Main message */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="glass rounded-3xl p-8 md:p-12 border border-brand-500/20 text-center mb-12"
+          style={{ background: 'linear-gradient(135deg, rgba(16,185,129,0.07) 0%, rgba(5,150,105,0.03) 100%)' }}
         >
-          {areas.map(({ icon: Icon, label, desc, color, bg, border, text }) => (
-            <motion.div
-              key={label}
-              variants={card}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className={`group glass rounded-2xl p-6 border ${border} hover:bg-white/8 transition-all duration-300 cursor-default`}
-            >
-              <div className={`w-12 h-12 rounded-xl ${bg} border ${border} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon className={`w-5 h-5 ${text}`} />
-              </div>
-              <h3 className="text-white font-semibold text-sm leading-snug mb-2">{label}</h3>
-              <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
-              <div className={`mt-4 h-0.5 w-0 group-hover:w-full bg-gradient-to-r ${color} rounded-full transition-all duration-500`} />
-            </motion.div>
-          ))}
+          <Sparkles className="w-10 h-10 text-brand-400 mx-auto mb-6" />
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            If you have a career path and a story, we want you.
+          </h3>
+          <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+            Whether you're a software engineer in London, a doctor in Toronto, a researcher in Berlin, an artist in New York, or someone who built a career abroad and came back to Sudan — your experience matters to a student who hasn't found their way yet.
+          </p>
+
+          {/* Field tags */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {broadFields.map((field, i) => (
+              <motion.span
+                key={field}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.04, duration: 0.4 }}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+                  i === broadFields.length - 1
+                    ? 'bg-brand-500/15 border-brand-500/40 text-brand-300 italic'
+                    : 'bg-white/5 border-white/10 text-slate-300'
+                }`}
+              >
+                {field}
+              </motion.span>
+            ))}
+          </div>
+
+          <a
+            href={MENTOR_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-bold text-lg shadow-xl shadow-brand-500/30 hover:-translate-y-1 transition-all"
+          >
+            Apply to Mentor — Any Field
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="text-center text-slate-500 mt-10 text-sm"
-        >
-          Don't see your field?{' '}
-          <a href="mailto:hello@sudanbridge.org" className="text-brand-400 hover:text-brand-300 transition-colors font-medium">
-            Request it →
-          </a>
-        </motion.p>
+        {/* Two paths */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              emoji: '✈️',
+              title: 'Living abroad',
+              desc: 'You built your career outside Sudan. You know what it takes to navigate a foreign job market, win a competitive scholarship, or break into a new industry. That knowledge is exactly what Sudanese youth need.',
+              border: 'border-brand-500/20',
+              bg: 'from-brand-500/10 to-teal-500/5',
+            },
+            {
+              emoji: '🏠',
+              title: 'Returned home',
+              desc: 'You studied or worked abroad and came back to Sudan. You bridge two worlds — and you can show students that investing in yourself doesn\'t mean leaving forever. You\'re a uniquely powerful role model.',
+              border: 'border-gold-500/20',
+              bg: 'from-gold-500/10 to-amber-400/5',
+            },
+          ].map(({ emoji, title, desc, border, bg }) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className={`glass rounded-2xl p-8 border ${border} bg-gradient-to-br ${bg}`}
+            >
+              <div className="text-3xl mb-4">{emoji}</div>
+              <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+              <p className="text-slate-400 leading-relaxed text-sm">{desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -1,66 +1,24 @@
 import { motion } from 'framer-motion'
 import { FileText, Globe, LinkedinIcon, BookOpen, Award, Mic } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
-import Button from '../ui/Button'
+import { MENTOR_FORM_URL } from '../../config'
 
-const resources = [
-  {
-    icon: FileText,
-    title: 'CV & Resume Templates',
-    description: 'Professional, ATS-optimized CV templates tailored for international job markets — with step-by-step guides.',
-    tag: 'Coming Soon',
-    color: 'from-brand-500 to-teal-500',
-    tagColor: 'bg-slate-100 text-slate-500',
-  },
-  {
-    icon: Globe,
-    title: 'Portfolio Building Guide',
-    description: 'Create a personal website that showcases your work. Includes GitHub setup, project documentation, and design tips.',
-    tag: 'Coming Soon',
-    color: 'from-violet-500 to-purple-500',
-    tagColor: 'bg-slate-100 text-slate-500',
-  },
-  {
-    icon: LinkedinIcon,
-    title: 'LinkedIn Optimization',
-    description: 'A step-by-step guide to building a LinkedIn profile that attracts recruiters, mentors, and opportunities globally.',
-    tag: 'Coming Soon',
-    color: 'from-blue-500 to-cyan-500',
-    tagColor: 'bg-slate-100 text-slate-500',
-  },
-  {
-    icon: BookOpen,
-    title: 'Scholarship Database',
-    description: 'Curated list of scholarships, fellowships, and fully-funded programs open to Sudanese students worldwide.',
-    tag: 'Coming Soon',
-    color: 'from-gold-500 to-amber-400',
-    tagColor: 'bg-slate-100 text-slate-500',
-  },
-  {
-    icon: Award,
-    title: 'Interview Preparation',
-    description: 'Mock interview guides, common technical and behavioral questions, and practice frameworks for top-tier companies.',
-    tag: 'Coming Soon',
-    color: 'from-rose-500 to-pink-500',
-    tagColor: 'bg-slate-100 text-slate-500',
-  },
-  {
-    icon: Mic,
-    title: 'Networking Masterclass',
-    description: 'Learn how to reach out to professionals, write cold emails, attend conferences, and build a lasting professional network.',
-    tag: 'Coming Soon',
-    color: 'from-indigo-500 to-blue-400',
-    tagColor: 'bg-slate-100 text-slate-500',
-  },
+const planned = [
+  { icon: FileText,     title: 'CV & Resume Guides',         desc: 'Practical templates and walkthroughs for writing a CV that works for international job applications and scholarship programs.' },
+  { icon: Globe,        title: 'Portfolio Building',          desc: 'Step-by-step guidance on creating an online presence — GitHub profiles, personal websites, and project showcases.' },
+  { icon: LinkedinIcon, title: 'LinkedIn & Networking',       desc: 'How to build a professional LinkedIn profile, reach out to people in your field, and grow a network that opens doors.' },
+  { icon: BookOpen,     title: 'Scholarships & Fellowships',  desc: 'Guides to finding, applying for, and winning scholarships and fully-funded programs available to Sudanese students.' },
+  { icon: Award,        title: 'Interview Preparation',       desc: 'Frameworks and practice materials for technical and behavioral interviews at universities and companies worldwide.' },
+  { icon: Mic,          title: 'Career Path Stories',         desc: 'First-person accounts from Sudanese professionals about how they got to where they are — the real path, not the polished version.' },
 ]
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.09 } },
 }
 
 const item = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
 }
 
@@ -76,9 +34,9 @@ export default function Resources() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Free Resources"
-          title={<>Everything you need to<br /><span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600">launch your career</span></>}
-          subtitle="These are the resources we're building — created by and with our mentor community. They'll be free and open to all students once we launch."
+          badge="Resources"
+          title={<>What we're<br /><span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600">building together</span></>}
+          subtitle="We're developing free, practical resources covering the things that matter most for Sudanese students — built with input from our mentors and published here as they're ready."
           light
         />
 
@@ -89,29 +47,20 @@ export default function Resources() {
           viewport={{ once: true, margin: '-60px' }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
         >
-          {resources.map(({ icon: Icon, title, description, tag, color, tagColor }) => (
+          {planned.map(({ icon: Icon, title, desc }) => (
             <motion.div
               key={title}
               variants={item}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group"
+              className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 group hover:shadow-md transition-all duration-300"
             >
-              {/* Icon */}
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                <Icon className="w-5 h-5 text-white" />
+              <div className="w-11 h-11 rounded-xl bg-slate-100 flex items-center justify-center mb-4 group-hover:bg-brand-50 transition-colors">
+                <Icon className="w-5 h-5 text-slate-400 group-hover:text-brand-500 transition-colors" />
               </div>
-
-              {/* Tag */}
-              <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3 ${tagColor}`}>
-                {tag}
+              <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-500 mb-3">
+                Coming soon
               </span>
-
-              <h3 className="text-slate-900 font-bold text-lg mb-3">{title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
-
-              <div className="mt-5 flex items-center text-slate-400 text-sm font-medium gap-1">
-                <span>Available at launch</span>
-              </div>
+              <h3 className="text-slate-900 font-bold text-base mb-2">{title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -123,10 +72,19 @@ export default function Resources() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <Button variant="primary" size="lg" href="#mentors">
-            Help Us Build These Resources
-          </Button>
-          <p className="text-slate-500 text-sm mt-3">Apply as a mentor and help shape what we create.</p>
+          <div className="inline-block px-8 py-5 rounded-2xl bg-gradient-to-r from-brand-50 to-teal-50 border border-brand-100 max-w-2xl">
+            <p className="text-slate-700 font-medium mb-4">
+              All resources will be free and open to every Sudanese student. Want to help shape them?
+            </p>
+            <a
+              href={MENTOR_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-semibold shadow-lg shadow-brand-500/25 hover:-translate-y-0.5 transition-all text-sm"
+            >
+              Apply as a Mentor — Help Us Build This
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

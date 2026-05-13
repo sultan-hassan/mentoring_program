@@ -10,31 +10,31 @@ const faqs = [
   },
   {
     question: 'Who can become a mentor?',
-    answer: 'Any Sudanese professional living abroad who wants to give back. Whether you have 5 years of experience or 25, your knowledge is valuable. We welcome engineers, doctors, entrepreneurs, academics, designers, and more.',
+    answer: 'Any Sudanese professional — living abroad or returned home — who wants to give back. We welcome professionals from any field and any level of experience. If you have a career path and a story, you qualify.',
   },
   {
-    question: 'How many hours does mentorship require per month?',
-    answer: 'As little as 2–4 hours per month. You set your own availability, choose how many students you work with, and decide the format — video calls, async messaging, or a mix of both.',
+    question: 'How much time does mentoring take?',
+    answer: 'Just 1 hour per month. That\'s the minimum commitment we ask for. One session per month with a student in your field — on your schedule, in your timezone, via video call, chat, or async message. You decide the format.',
+  },
+  {
+    question: 'When is the mentor application deadline?',
+    answer: 'The deadline to apply for our founding cohort is June 16, 2026. We\'ll review all applications and reach out to accepted mentors shortly after. Apply early — spots are limited for the first cohort.',
+  },
+  {
+    question: 'What does a mentor application require?',
+    answer: 'To apply, you\'ll need to fill out a short form with your professional background, field, and motivation. You\'ll also be asked to share your LinkedIn profile URL, a CV or resume (via Google Drive link), and a profile photo. This helps us match you with students and feature you on the platform.',
   },
   {
     question: 'How does the matching process work?',
-    answer: 'Students fill out a profile with their goals, interests, and the type of guidance they need. We then suggest compatible mentors based on field alignment, availability, language preference, and mentoring style.',
-  },
-  {
-    question: 'Does my Sudanese student need internet access?',
-    answer: 'Mentorship sessions are conducted over video call or chat — a stable internet connection is helpful. We\'re actively working to ensure our platform works well even on slower connections.',
+    answer: 'Students fill out a profile with their goals, interests, and the type of guidance they need. We then match them with mentors based on field alignment, availability, and language preference.',
   },
   {
     question: 'Are sessions in Arabic or English?',
-    answer: 'Both! Mentors and students choose their preferred language. Many sessions are conducted in Arabic, some in English, and some in a mix. We fully support both languages across the platform.',
+    answer: 'Both. Mentors and students choose their preferred language. Sessions can be fully in Arabic, fully in English, or a mix — whatever works best for the pair.',
   },
   {
     question: 'Can organizations or universities partner with SudanBridge?',
-    answer: 'Absolutely. We welcome partnerships with universities, NGOs, embassies, and companies who want to support Sudanese youth. Reach out to us at hello@sudanbridge.org to discuss how we can collaborate.',
-  },
-  {
-    question: 'What if I am not Sudanese but want to help?',
-    answer: 'We appreciate your support. While our mentor pool focuses on Sudanese diaspora professionals (to preserve cultural connection and relatability), we welcome allies as sponsors, event speakers, and organizational partners.',
+    answer: 'Absolutely. We welcome partnerships with universities, NGOs, embassies, and companies who want to support Sudanese youth. Reach out to us at hello@sudanbridge.org.',
   },
 ]
 
