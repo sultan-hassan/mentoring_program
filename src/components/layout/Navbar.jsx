@@ -5,11 +5,10 @@ import Button from '../ui/Button'
 import { MENTOR_FORM_URL, STUDENT_FORM_URL } from '../../config'
 
 const navLinks = [
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Impact',       href: '#impact' },
-  { label: 'Resources',    href: '#resources' },
-  { label: 'Events',       href: '#events' },
-  { label: 'FAQ',          href: '#faq' },
+  { label: 'How It Works',  href: '#how-it-works' },
+  { label: 'Apply — Mentor', href: '#apply-mentor' },
+  { label: 'Apply — Student', href: '#apply-student' },
+  { label: 'FAQ',            href: '#faq' },
 ]
 
 export default function Navbar() {
@@ -36,9 +35,8 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
             <a href="#" className="flex items-center gap-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-teal-500 flex items-center justify-center shadow-lg shadow-brand-500/40 group-hover:shadow-brand-400/60 transition-shadow">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-teal-500 flex items-center justify-center shadow-lg shadow-brand-500/40">
                 <Globe className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold text-white">
@@ -46,7 +44,6 @@ export default function Navbar() {
               </span>
             </a>
 
-            {/* Desktop links */}
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <a
@@ -59,17 +56,15 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-3">
-              <Button variant="secondary" size="sm" href="#apply-mentor">
-                Become a Mentor
+              <Button variant="secondary" size="sm" href="#apply-student">
+                I'm a Student
               </Button>
-              <Button variant="primary" size="sm" href="#apply-student">
-                Find a Mentor
+              <Button variant="primary" size="sm" href="#apply-mentor">
+                Apply as Mentor
               </Button>
             </div>
 
-            {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-all"
@@ -81,7 +76,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -103,11 +97,11 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
-                <Button variant="secondary" href="#apply-mentor" className="w-full justify-center">
-                  Become a Mentor
+                <Button variant="secondary" href="#apply-student" className="w-full justify-center">
+                  I'm a Student
                 </Button>
-                <Button variant="primary" href="#apply-student" className="w-full justify-center">
-                  Find a Mentor
+                <Button variant="primary" href="#apply-mentor" className="w-full justify-center">
+                  Apply as Mentor
                 </Button>
               </div>
             </div>
