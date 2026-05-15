@@ -95,8 +95,8 @@ export default function FAQ() {
           className="text-center text-slate-500 text-sm"
         >
           More questions?{' '}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand-600 hover:text-brand-700 font-semibold transition-colors">
-            Email us →
+          <a href="#contact" className="text-brand-600 hover:text-brand-700 font-semibold transition-colors">
+            Send us a message →
           </a>
         </motion.p>
       </div>

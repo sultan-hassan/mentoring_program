@@ -7,6 +7,7 @@ import ApplyMentor from './components/sections/ApplyMentor'
 import MentorPlaceholders from './components/sections/MentorPlaceholders'
 import ApplyStudent from './components/sections/ApplyStudent'
 import FAQ from './components/sections/FAQ'
+import Contact from './components/sections/Contact'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <MentorPlaceholders />
         <ApplyStudent />
         <FAQ />
+        <Contact />
       </main>
       <Footer />
     </div>
