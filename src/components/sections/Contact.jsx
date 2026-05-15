@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
-import { CONTACT_EMAIL } from '../../config'
+import { CONTACT_EMAIL, WEB3FORMS_KEY } from '../../config'
 
-const ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`
+const ENDPOINT = 'https://api.web3forms.com/submit'
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all'
@@ -17,10 +17,10 @@ export default function Contact() {
 
     const form = e.target
     const payload = {
-      name:    form.name.value,
-      email:   form.email.value,
-      message: form.message.value,
-      _honey:  '',   // spam trap — leave empty
+      access_key: WEB3FORMS_KEY,
+      name:       form.name.value,
+      email:      form.email.value,
+      message:    form.message.value,
     }
 
     try {
@@ -30,7 +30,7 @@ export default function Contact() {
         body:    JSON.stringify(payload),
       })
       const data = await res.json()
-      if (data.success === 'true' || data.success === true) {
+      if (data.success) {
         setStatus('success')
         form.reset()
       } else {
@@ -94,9 +94,6 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4"
           >
-            {/* Honeypot — hidden from real users */}
-            <input type="text" name="_honey" className="hidden" aria-hidden="true" />
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-1.5">
