@@ -5,5 +5,5 @@
 export const MENTOR_FORM_URL  = 'https://forms.gle/jPDzh9yGMoNUm9zk8'
 export const STUDENT_FORM_URL = 'https://forms.gle/REPLACE_WITH_STUDENT_FORM_URL'
 
-export const CONTACT_EMAIL    = 'hello@sudanbridge.org'
+export const CONTACT_EMAIL    = 'sultanier@gmail.com'
 export const DEADLINE         = 'June 16, 2026'
