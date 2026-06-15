@@ -267,7 +267,7 @@ export default function Hero() {
                   Find a Mentor
                   <ArrowRight className="w-5 h-5" />
                 </Button>
-                <span className="text-slate-500 text-xs">Applications open {DEADLINE}</span>
+                <span className="text-slate-500 text-xs">Applications open {NEWDEADLINE}</span>
               </div>
               <div className="flex flex-col items-center sm:items-start gap-1">
                 <Button variant="secondary" size="lg" href={MENTOR_FORM_URL}>
