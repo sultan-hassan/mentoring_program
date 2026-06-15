@@ -690,8 +690,29 @@ const mentors = [
     bio: 'I am a Medical Doctor by background studied at the University of Gezira.  I won the university of Sheffield Africa Scholarship, and I am now Qualitative Researcher at the University of Sheffield School of Health Research.',
     color: '#059669'
   },
+  {
+    id: 63,
+    name: 'May Atif',
+    country: 'United Arab Emirates',
+    title: 'MEA Sr. Learning & Leadership Development Manager',
+    field: 'Human Resources - Learning and Development',
+    photoUrl: './mentors_photos/may-atif.png',
+    linkedin: 'https://www.linkedin.com/in/may-atif-44714b17/',
+    bio: '',
+    color: '#059669'
+  },
+  {
+    id: 64,
+    name: 'Nuha Mahmoud',
+    country: 'Germany',
+    title: 'Toxicologist at Procter & Gamble',
+    field: 'Toxicology / Human Health Risk Assessment',
+    photoUrl: './mentors_photos/nuha-mahmoud.png',
+    linkedin: 'https://www.linkedin.com/in/nuha-e-mahmoud/',
+    bio: 'I’m a passionate scientist with a PhD in Pharmaceutical Biology and a strong foundation in pharmaceutical sciences. Today, as a toxicologist, I focus on human and product safety, ensuring that scientific knowledge is thoughtfully applied to create safe products. I thrive at the intersection between science and real-world consumer needs, where rigorous research guides decisions that support product safety. Currently, within P&G, I am working on the safety of menstrual products. The menstrual care space inspires my social commitment and dedication to product safety. I value integrity, ethics, responsibility, and I am motivated to learn, communicate, and make a meaningful difference in people lives.',
+    color: '#059669'
+  }
   
-
 
 ].sort((a, b) => a.name.localeCompare(b.name))
 
