@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Users, Sparkles } from 'lucide-react'
 import Button from '../ui/Button'
-import { MENTOR_FORM_URL, STUDENT_FORM_URL, DEADLINE } from '../../config'
+import { MENTOR_FORM_URL, STUDENT_FORM_URL, DEADLINE, NEWDEADLINE } from '../../config'
 
 const SUDAN = { x: 265, y: 235 }
 
