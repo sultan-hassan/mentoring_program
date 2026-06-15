@@ -326,17 +326,29 @@ const mentors = [
     bio: 'I am currently studying International business in Rotterdam university , specialising in marketing.',
     color: '#059669'
   },
-  {
+    {
     id: 30,
-    name: 'Wigdan Seedahmed',
-    country: 'Sweden',
-    title: 'Senior Analyst / Senior Advisor / Consultant',
-    field: 'International Relations',
-    photoUrl: './mentors_photos/wigdan-seedahmed.png',
-    linkedin: 'https://www.linkedin.com/in/wigdan-seedahmed',
-    bio: 'I am a Business Development Executive with 15 years of international experience. I specialize in transforming data and technologies into actionable strategies and solutions that drive growth.',
+    name: 'Nuha Mahmoud',
+    country: 'Germany',
+    title: 'Toxicologist at Procter & Gamble',
+    field: 'Toxicology / Human Health Risk Assessment',
+    photoUrl: './mentors_photos/nuha-mahmoud.png',
+    linkedin: 'https://www.linkedin.com/in/nuha-e-mahmoud/',
+    bio: 'I’m a passionate scientist with a PhD in Pharmaceutical Biology and a strong foundation in pharmaceutical sciences. Today, as a toxicologist, I focus on human and product safety, ensuring that scientific knowledge is thoughtfully applied to create safe products. I thrive at the intersection between science and real-world consumer needs, where rigorous research guides decisions that support product safety. Currently, within P&G, I am working on the safety of menstrual products. The menstrual care space inspires my social commitment and dedication to product safety. I value integrity, ethics, responsibility, and I am motivated to learn, communicate, and make a meaningful difference in people lives.',
     color: '#059669'
-  },
+  }
+  //{
+  //  id: 30,
+  //  name: 'Wigdan Seedahmed',
+  //  country: 'Sweden',
+  //  title: 'Senior Analyst / Senior Advisor / Consultant',
+  //  field: 'International Relations',
+  //  photoUrl: './mentors_photos/wigdan-seedahmed.png',
+  //  linkedin: 'https://www.linkedin.com/in/wigdan-seedahmed',
+  //  bio: 'I am a Business Development Executive with 15 years of international experience. I specialize in transforming data and technologies into actionable strategies and solutions that drive growth.',
+  //  color: '#059669'
+  //},
+
   {
     id: 31,
     name: 'Mohamed Sharfi',
@@ -450,7 +462,7 @@ const mentors = [
   },
   {
     id: 41,
-    name: 'Tarig mohamed',
+    name: 'Tarig Mohamed',
     country: 'United States',
     title: 'SQL developer/Business Intelligence',
     field: 'Information Technology',
@@ -701,17 +713,7 @@ const mentors = [
     bio: '',
     color: '#059669'
   },
-  {
-    id: 64,
-    name: 'Nuha Mahmoud',
-    country: 'Germany',
-    title: 'Toxicologist at Procter & Gamble',
-    field: 'Toxicology / Human Health Risk Assessment',
-    photoUrl: './mentors_photos/nuha-mahmoud.png',
-    linkedin: 'https://www.linkedin.com/in/nuha-e-mahmoud/',
-    bio: 'I’m a passionate scientist with a PhD in Pharmaceutical Biology and a strong foundation in pharmaceutical sciences. Today, as a toxicologist, I focus on human and product safety, ensuring that scientific knowledge is thoughtfully applied to create safe products. I thrive at the intersection between science and real-world consumer needs, where rigorous research guides decisions that support product safety. Currently, within P&G, I am working on the safety of menstrual products. The menstrual care space inspires my social commitment and dedication to product safety. I value integrity, ethics, responsibility, and I am motivated to learn, communicate, and make a meaningful difference in people lives.',
-    color: '#059669'
-  }
+
   
 
 ].sort((a, b) => a.name.localeCompare(b.name))
