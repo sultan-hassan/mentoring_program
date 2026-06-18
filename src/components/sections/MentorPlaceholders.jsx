@@ -77,7 +77,7 @@ const mentors = [
     id: 7,
     name: 'Zeriab Fadol',
     country: 'United States',
-    title: 'Salesforce Solution Architect',
+    title: 'FZ Tech Founder / Salesforce Solution Architect',
     field: 'Salesforce - Customer Relationship Management (CRM)',
     photoUrl: './mentors_photos/zeriab-fadol.png',
     linkedin: 'https://www.linkedin.com/in/zeriab-fadol-400165172',
@@ -511,7 +511,7 @@ const mentors = [
     field: 'Semiconductor and R&D',
     photoUrl: './mentors_photos/khalid-osman.png',
     linkedin: 'https://www.linkedin.com/in/khosman/',
-    bio: 'Senior Yield Development Engineer with an MS in Chemistry and 13 years of combined experience, featuring an 11-year tenure at Intel Corporation specializing in semiconductor manufacturing, failure analysis, and operational lab management. Offer a proven track record of advancing into senior engineering roles by identifying and resolving complex manufacturing process deviations and technical excursions. Leverage advanced data analysis and Statistical Process Control (SPC) to consistently optimize quality control metrics and ensure rigorous lab safety compliance',
+    bio: 'I have a master degree in chemistry and been working with Intel for over 11 years in manufacturing, advanced packaging technology development (APTD: S&W), progressing from technician to lab owner to yield analysis engineer and currently senior yield development engineer. Through my career I handled many different roles ranging from managing lab operations, equipment service contracts and PO management, to analyzing samples, method development, leading cross-functional task forces, DOE experiments, validating white papers for new tools and chemistries, failure analysis, and process troubleshooting in research and development environment. I provided technical leadership in driving process improvements, mentoring team members, and leading technical decision-making for complex analytical challenges. I am skilled in data interpretation, LIMS management, SPC and material characterization using advanced analytical instrumentation.',
     color: '#059669'
   },
   {
@@ -540,11 +540,11 @@ const mentors = [
     id: 48,
     name: 'Alaa Abdelraheem',
     country: 'Saudi Arabia',
-    title: 'Project Manager',
+    title: 'Project Manager/Founder of YouthGuidance (تمهيد)',
     field: 'Project management',
     photoUrl: './mentors_photos/alaa-abdelraheem.png',
     linkedin: 'https://www.linkedin.com/in/alaa-abdelraheem-mba-pmp%C2%AE-379264115/',
-    bio: '',
+    bio: 'A results-driven project management professional with a strong track record of delivering high-impact projects across public, private, and non-profit sectors. My expertise spans digital business, strategic planning, and governance, with a consistent focus on driving innovation and aligning initiatives with organisational goals. I am recognised for leading cross-functional teams, steering complex programmes from inception to delivery, and translating data-driven insights into sound decisions — all within fast-paced and ever-changing environments. Founder of YouthGuidance (تمهيد): https://www.linkedin.com/company/gdp-platform/about/, and  I am currently working on Tech Solution Mentor.',
     color: '#059669'
   },
   {
@@ -610,7 +610,7 @@ const mentors = [
     field: 'Pharma Industry, Biomedical Research',
     photoUrl: './mentors_photos/mohamed-saeed.png',
     linkedin: 'https://www.linkedin.com/in/moe-saeed/',
-    bio: 'I am a research scientist, university professor, and pharmaceutical consultant based in Germany, holding a PhD in Pharmacy and bringing over a decade of industry expertise to my work. My technical proficiency spans Good Manufacturing Practice (GMP) regulations, sterile pharmaceutical production technologies, and comprehensive Quality Risk Management (QRM) methodologies. Throughout my career, I have built a proven track record in cancer research, pharmacogenomics, and strategic leadership, consistently driving both regulatory adherence and operational excellence. Furthermore, my entrepreneurial drive has led me to establish an international pharmaceutical trading company and a specialized consultancy to empower and train fellow industry professionals.',
+    bio: 'I am a research scientist, university associate professor, and pharmaceutical consultant based in Germany, holding a PhD in Pharmacy and bringing over a decade of industry expertise to my work. My technical proficiency spans Good Manufacturing Practice (GMP) regulations, sterile pharmaceutical production technologies, and comprehensive Quality Risk Management (QRM) methodologies. Throughout my career, I have built a proven track record in cancer research, pharmacogenomics, and strategic leadership, consistently driving both regulatory adherence and operational excellence. Furthermore, my entrepreneurial drive has led me to establish an international pharmaceutical trading company and a specialized consultancy to empower and train fellow industry professionals.',
     color: '#059669'
   },
   {
@@ -712,7 +712,106 @@ const mentors = [
     bio: '',
     color: '#059669'
   },
-
+   {
+    id: 64,
+    name: 'Iman Ahmed',
+    country: 'Saudi Arabia',
+    title: 'Quality Assurance and Quality Control Chemist',
+    field: 'Chemistry',
+    photoUrl: './mentors_photos/iman-ahmed.png',
+    linkedin: 'https://www.linkedin.com/in/iman-ahmed-qa-qc',
+    bio: 'I am a petroleum chemist with extensive experience in refinery operations, quality assurance, and laboratory analysis. Alongside my industrial career, I have a strong passion for chemistry education and mentoring. Over the years, I have participated in mentoring sessions focused on scholarship applications, training opportunities, and academic development. Recently, I founded the STEM Opportunities Network, a Telegram community dedicated to sharing educational and research opportunities and supporting applicants throughout the application process. I enjoy helping students and young professionals access opportunities that can advance their academic and professional careers.',
+    color: '#059669'
+  },
+  {
+    id: 65,
+    name: 'Ahmed Abdelaziz',
+    country: 'Saudi Arabia',
+    title: 'Chief Operating Officer (COO)',
+    field: 'Supply Chain Mangmnet',
+    photoUrl: './mentors_photos/ahmed-abdelaziz.png',
+    linkedin: 'https://www.linkedin.com/in/ahmed-abdelaziz-mba-cscp-cbm-pmp%C2%AE-pmi-acp%C2%AE-291b2b75/',
+    bio: 'I am an operations and supply chain leader passionate about turning complex challenges into clear, practical solutions. With experience across Sudan and Saudi Arabia, I have led teams, improved business growth, and built data-driven systems in FMCG, hospitality, and retail. My goal is to support Sudanese youth by sharing leadership, business, and operational knowledge, helping them build skills, confidence, discipline, and future opportunities for their communities.',
+    color: '#059669'
+  },
+  {
+    id: 66,
+    name: 'Zinah Abdelkareem',
+    country: 'Uganda',
+    title: 'Program Manager',
+    field: 'Development and Humanitarian Work',
+    photoUrl: './mentors_photos/zinah-abdelkareem.png',
+    linkedin: 'https://www.linkedin.com/in/zinah-abdelkareem-bb948458/',
+    bio: 'I am a humanitarian and community development professional with experience working with United Nations agencies, international NGOs. I founded a not-for-profit organization focused on youth empowerment, community development, and engagement. As a youth advocate, I am passionate about supporting young people and strengthening communities through youth and women led initiatives.',
+    color: '#059669'
+  },
+  {
+    id: 67,
+    name: 'Shahd Abbas',
+    country: 'Saudi Arabia',
+    title: 'Monitoring and Evaluation Professional',
+    field: 'Monitoring and Evaluation',
+    photoUrl: './mentors_photos/shahd-abbas.png',
+    linkedin: 'https://www.linkedin.com/in/shahd-abbas-a57895107/',
+    bio: 'I am a Monitoring, Evaluation, Accountability, and Learning (MEAL/M&E) professional with experience in humanitarian and development programs, including developing monitoring systems and coordinating teams across sectors such as Health, Nutrition, Education, Child Protection, and WASH. I hold a Master’s degree in Environmental Science and am passionate about improving program quality through evidence-based approaches, learning, and effective data use. I am continuously developing my skills through professional opportunities, fellowships, and academic growth.',
+    color: '#059669'
+  },
+  {
+    id: 68,
+    name: 'Raja Abdalnasir',
+    country: 'Malaysia',
+    title: 'Senior Executive, Business Performance Improvement',
+    field: ' Business Planning - Strategy and Commercial',
+    photoUrl: './mentors_photos/raja-abdalnasir.png',
+    linkedin: 'https://www.linkedin.com/in/raja-abdalnasir/',
+    bio: 'I am an engineer by degree and a business planner and strategist by profession, with over a decade of experience in the energy sector. I was fortunate to receive the PETRONAS Education Sponsorship Program, which exposed me to diverse cultures and perspectives early in my university years. I believe sustainable transformation requires both strategic execution and inclusive cultures where people feel recognized and empowered. I value leading with empathy as a guiding principle in driving meaningful change.',
+    color: '#059669'
+  },
+  {
+    id: 69,
+    name: 'Hammam Abu obaida',
+    country: 'Saudi Arabia',
+    title: 'Digital Marketing Specialist',
+    field: 'Marketing',
+    photoUrl: './mentors_photos/hammam-abu-obaida.png',
+    linkedin: '',
+    bio: 'My name is Hamam Abu Obaida, and I specialize in digital marketing. I work in Saudi Arabia and can help you understand marketing and its tools from beginner to professional level. I can also advise you on how to leverage this field to develop your business or how to find a job in marketing.',
+    color: '#059669'
+  },
+  {
+    id: 70,
+    name: 'Muntasir Adam',
+    country: 'Sweden',
+    title: 'Agentic AI Engineer',
+    field: 'Software Engineering and Management',
+    photoUrl: './mentors_photos/muntasir-adam.png',
+    linkedin: 'https://www.linkedin.com/in/muntasir-adam-40890353/',
+    bio: 'Software Engineer specializing in Agentic AI and LLM systems, currently completing an MSc in Software Engineering and Management at the University of Gothenburg (2024–2026).',
+    color: '#059669'
+  },
+  {
+    id: 71,
+    name: 'Nasraldin Zakaria',
+    country: 'Egypt',
+    title: 'Teacher',
+    field: 'Language, Education, Music, Performance',
+    photoUrl: './mentors_photos/nasraldin-zakaria.png',
+    linkedin: 'https://www.linkedin.com/in/nasir-zacki-221020328/',
+    bio: 'I am a proud husband and father who believes in community building, a passionate educator and facilitator of knowledge and a long time performer and singer-songwriter.',
+    color: '#059669'
+  },
+  {
+    id: 72,
+    name: 'Mohamed Mohamed',
+    country: 'United States',
+    title: 'Process Development Engineer',
+    field: 'Semiconductor Manufacturing | Advanced Packaging | Yield & Reliability | AI-Enabled Inspection',
+    photoUrl: './mentors_photos/mohamed-mohamed.png',
+    linkedin: 'https://www.linkedin.com/in/mohamed-m-63a00065/',
+    bio: 'Process Development Engineer with 9+ years of experience across SiC wafer fabrication, advanced semiconductor assembly, thermoelectric devices, and high-reliability manufacturing. Proven record of leading NPI, technology transfer, process qualification, yield improvement, and automation from prototype through scalable production. Combines DOE, SPC, process capability, materials characterization, reliability engineering, and structured root-cause analysis with AI/ML-enabled inspection to improve yield, throughput, quality, and cost. Trusted cross-functional technical leader connecting R&D, Manufacturing, Quality, and Equipment Engineering.',
+    color: '#059669'
+  }
+  
   
 
 ].sort((a, b) => a.name.localeCompare(b.name))
