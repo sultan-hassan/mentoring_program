@@ -46,7 +46,7 @@ export default function ApplyStudent() {
             </ul>
 
             <p className="text-slate-600 text-sm mb-6">
-              The registration form takes <strong>2 minutes</strong>. Tell us your field and what you're hoping to learn — we'll take it from there.
+              The registration form takes <strong>5-10 minutes</strong>. Tell us your field and what you're hoping to learn — we'll take it from there.
             </p>
 
             <a
