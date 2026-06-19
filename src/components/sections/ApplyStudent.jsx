@@ -55,11 +55,11 @@ export default function ApplyStudent() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-night-950 font-bold text-lg shadow-lg shadow-gold-500/25 hover:-translate-y-1 transition-all"
             >
-              Register Interest — Google Form
+              Apply now
               <ArrowRight className="w-5 h-5" />
             </a>
             <p className="text-slate-500 text-xs mt-3">
-              Opens in a new tab · Free · We'll reach out when a mentor is ready
+              Opens in a new tab · Free · We'll reach out after the deadline July 19, and when your mentor is ready
             </p>
           </div>
         </motion.div>
