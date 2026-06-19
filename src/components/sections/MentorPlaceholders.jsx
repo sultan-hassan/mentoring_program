@@ -797,7 +797,7 @@ const mentors = [
     field: 'Language, Education, Music, Performance',
     photoUrl: './mentors_photos/nasraldin-zakaria.png',
     linkedin: 'https://www.linkedin.com/in/nasir-zacki-221020328/',
-    bio: 'I am a proud husband and father who believes in community building, a passionate educator and facilitator of knowledge and a long time performer and singer-songwriter.',
+    bio: 'Proud to have achieved a fulfilling balance between a successful career in performance and education and a happy family life. Fortunate to have turned my favorite hobby into a rewarding profession and to have found my perfect life partner in the love of my life. I believe that lasting success is built on passion, purpose, and meaningful relationships.',
     color: '#059669'
   },
   {

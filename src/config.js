@@ -3,7 +3,7 @@
 // Responses save automatically to Google Sheets — free & unlimited.
 
 export const MENTOR_FORM_URL  = 'https://forms.gle/jPDzh9yGMoNUm9zk8'
-export const STUDENT_FORM_URL = 'https://forms.gle/REPLACE_WITH_STUDENT_FORM_URL'
+export const STUDENT_FORM_URL = 'https://forms.gle/kxQe5dASEKSRgCKW8'
 
 export const CONTACT_EMAIL    = 'sultanier@gmail.com'
 export const DEADLINE         = 'June 16, 2026'
